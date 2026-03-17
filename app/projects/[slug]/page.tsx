@@ -1624,7 +1624,7 @@ function CircuitPattern({ color }: { color: string }) {
     const strokeColor = colorMap[color] || '#ffffff';
     return (
         <div className="absolute inset-0 z-10 opacity-30 pointer-events-none mask-image:radial-gradient(circle, black 60%, transparent 100%)">
-            <svg className="w-full h-full" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)">
+            <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                 <pattern id="circuit-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
                     <path d="M100 0H0V100" fill="none" stroke={strokeColor} strokeWidth="0.5" strokeDasharray="4 4" />
                     <path d="M25 25h50v50h-50z" fill="none" stroke={strokeColor} strokeWidth="0.5" />
