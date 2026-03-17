@@ -1,0 +1,66 @@
+1:"$Sreact.fragment"
+2:I[21792,["/my-portfolio/_next/static/chunks/06b4be67a065a24d.js","/my-portfolio/_next/static/chunks/03990c2760f619b0.js","/my-portfolio/_next/static/chunks/492e63f4571e2cb1.js","/my-portfolio/_next/static/chunks/1f6b0e9deb96c487.js","/my-portfolio/_next/static/chunks/d6c1f3a2473dc156.js","/my-portfolio/_next/static/chunks/f7faf6018461a56a.js","/my-portfolio/_next/static/chunks/ab1393ed70c46fa4.js","/my-portfolio/_next/static/chunks/a12cfb8782dbc43e.js","/my-portfolio/_next/static/chunks/4adf74863df99805.js","/my-portfolio/_next/static/chunks/28929634515ec828.js"],"default"]
+3:I[46915,["/my-portfolio/_next/static/chunks/06b4be67a065a24d.js","/my-portfolio/_next/static/chunks/03990c2760f619b0.js","/my-portfolio/_next/static/chunks/492e63f4571e2cb1.js","/my-portfolio/_next/static/chunks/1f6b0e9deb96c487.js","/my-portfolio/_next/static/chunks/d6c1f3a2473dc156.js","/my-portfolio/_next/static/chunks/f7faf6018461a56a.js","/my-portfolio/_next/static/chunks/ab1393ed70c46fa4.js","/my-portfolio/_next/static/chunks/a12cfb8782dbc43e.js","/my-portfolio/_next/static/chunks/4adf74863df99805.js","/my-portfolio/_next/static/chunks/28929634515ec828.js"],""]
+12:I[44232,["/my-portfolio/_next/static/chunks/0bde190264d46f1b.js","/my-portfolio/_next/static/chunks/748955d5935a73dc.js"],"OutletBoundary"]
+13:"$Sreact.suspense"
+0:{"buildId":"3xKbVw0_CoPRq-MXI2r9j","rsc":["$","$1","c",{"children":[["$","main",null,{"className":"min-h-screen text-[#c9d1d9] selection:bg-[#1f6feb]/40 font-sans relative","children":[["$","div",null,{"className":"fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-0","children":["$","$L2",null,{}]}],["$","nav",null,{"className":"fixed top-0 w-full z-50 bg-[#010409]/70 backdrop-blur-md border-b border-[#30363d]","children":["$","div",null,{"className":"max-w-7xl mx-auto px-6 py-4","children":["$","$L3",null,{"href":"/","className":"inline-flex items-center text-sm font-medium text-[#8b949e] hover:text-[#58a6ff] transition-colors","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":16,"height":16,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-arrow-left mr-2","aria-hidden":"true","children":[["$","path","1l729n",{"d":"m12 19-7-7 7-7"}],["$","path","x3x0zl",{"d":"M19 12H5"}],"$undefined"]}]," Back to Projects"]}]}]}],["$","div",null,{"className":"pt-32 pb-20 px-6 max-w-7xl mx-auto relative z-10 animate-fade-in-up","children":[["$","div",null,{"className":"mb-10 border-b border-[#30363d] pb-8","children":["$","div",null,{"className":"flex flex-col md:flex-row gap-6 md:items-start md:justify-between","children":[["$","div",null,{"className":"space-y-4 max-w-3xl","children":[["$","div",null,{"className":"inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold tracking-wider uppercase rounded-full border border-[rgba(240,246,252,0.1)] bg-[rgba(110,118,129,0.4)] text-[#c9d1d9] w-fit","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":14,"height":14,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-file-text","aria-hidden":"true","children":[["$","path","1oefj6",{"d":"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"}],["$","path","wfsgrz",{"d":"M14 2v5a1 1 0 0 0 1 1h5"}],["$","path","b1mrlr",{"d":"M10 9H8"}],["$","path","t4e002",{"d":"M16 13H8"}],["$","path","z1uh3a",{"d":"M16 17H8"}],"$undefined"]}],"Research"]}],["$","h1",null,{"className":"text-3xl md:text-5xl font-bold tracking-tight sun-glow","style":{"--core":"#ffffff","--plasma":"#e6e6e6","--corona":"#bdc3c7","--outer":"#7f8c8d"},"children":"Academic Review Paper"}],["$","p",null,{"className":"text-xl text-[#8b949e] leading-relaxed","children":"Review on Qunatum Communcation and its applications."}]]}],["$","div",null,{"className":"hidden md:flex flex-col gap-3 min-w-[200px]"}]]}]}],["$","div",null,{"className":"grid grid-cols-1 lg:grid-cols-12 gap-10","children":[["$","div",null,{"className":"lg:col-span-9 space-y-6","children":["$undefined",["$","div",null,{"className":"relative w-full aspect-video rounded-md overflow-hidden border border-[#30363d] bg-[#0d1117] group shadow-2xl shadow-blue-900/20","children":["$","iframe",null,{"src":"https://drive.google.com/file/d/1X64jciX3UIfYyOQgdIG6SAA5JPARppEj/preview","className":"w-full h-full object-cover z-20 relative","allow":"autoplay; encrypted-media","allowFullScreen":true}]}],["$","div",null,{"className":"rounded-md border border-[#30363d] bg-[#0d1117]/80 backdrop-blur-md","children":[["$","div",null,{"className":"border-b border-[#30363d] bg-[#161b22]/90 px-4 py-3 rounded-t-md flex items-center gap-2","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":16,"height":16,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-code-xml text-[#8b949e]","aria-hidden":"true","children":[["$","path","1inbqp",{"d":"m18 16 4-4-4-4"}],["$","path","15zrgr",{"d":"m6 8-4 4 4 4"}],["$","path","e7oirm",{"d":"m14.5 4-5 16"}],"$undefined"]}],["$","span",null,{"className":"text-xs font-mono font-semibold text-[#e6edf3]","children":"README.md"}]]}],["$","article",null,{"className":"p-8 md:p-10 font-sans ","children":[["$","p","p-0",{"className":"text-[16px] leading-[1.6] text-[#c9d1d9] mb-4","children":"A systematic review of state-of-the-art advancements in Quantum Communication. The paper categorizes over 10 recent publications, comparing their methodologies, efficiencies, and practical applications in modern technology."}]]}]]}]]}],"$L4"]}]]}],"$L5"]}],["$L6","$L7","$L8","$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf"],"$L10"]}],"loading":null,"isPartial":false}
+4:["$","div",null,{"className":"lg:col-span-3 space-y-6","children":["$","div",null,{"className":"sticky top-24 space-y-6","children":[false,["$","div",null,{"className":"p-4 rounded-md bg-[#0d1117]/80 border border-[#30363d] backdrop-blur-md shadow-lg","children":[["$","h3",null,{"className":"font-semibold text-sm text-[#e6edf3] mb-3","children":"Languages"}],["$","div",null,{"className":"flex flex-wrap gap-2","children":[["$","span","0",{"className":"px-3 py-1 text-xs font-medium text-[#c9d1d9] bg-[#21262d]/80 rounded-full border border-[rgba(240,246,252,0.1)]","children":"Quantum Communication"}],["$","span","1",{"className":"px-3 py-1 text-xs font-medium text-[#c9d1d9] bg-[#21262d]/80 rounded-full border border-[rgba(240,246,252,0.1)]","children":"Quantum Mechanics"}],["$","span","2",{"className":"px-3 py-1 text-xs font-medium text-[#c9d1d9] bg-[#21262d]/80 rounded-full border border-[rgba(240,246,252,0.1)]","children":"LaTeX"}],["$","span","3",{"className":"px-3 py-1 text-xs font-medium text-[#c9d1d9] bg-[#21262d]/80 rounded-full border border-[rgba(240,246,252,0.1)]","children":"Academic Writing"}],["$","span","4",{"className":"px-3 py-1 text-xs font-medium text-[#c9d1d9] bg-[#21262d]/80 rounded-full border border-[rgba(240,246,252,0.1)]","children":"Data Analysis"}]]}]]}]]}]}]
+11:T6d5,
+          .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+          .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+          .custom-scrollbar::-webkit-scrollbar-thumb { background: #30363d; border-radius: 4px; }
+          html { scroll-behavior: smooth; }
+          
+          @keyframes fade-in-up {
+              from { opacity: 0; transform: translateY(20px); }
+              to { opacity: 1; transform: translateY(0); }
+          }
+          .animate-fade-in-up { animation: fade-in-up 0.6s ease-out; }
+
+          /* --- DYNAMIC SUN GLOW CSS --- */
+          /* Using CSS Variables injected from the component */
+          .sun-glow {
+              color: var(--core);
+              text-shadow: 
+                0 0 10px var(--core),
+                0 0 20px var(--plasma),
+                0 0 30px var(--corona),
+                0 0 40px var(--outer),
+                0 0 70px var(--outer),
+                0 0 80px var(--core);
+              animation: sun-pulse 4s ease-in-out infinite;
+          }
+
+          @keyframes sun-pulse {
+              0%, 100% {
+                  text-shadow: 
+                    0 0 10px var(--core),
+                    0 0 20px var(--plasma),
+                    0 0 30px var(--corona),
+                    0 0 40px var(--outer),
+                    0 0 70px var(--outer),
+                    0 0 80px var(--core);
+              }
+              50% {
+                  text-shadow: 
+                    0 0 12px var(--core),
+                    0 0 25px var(--plasma),
+                    0 0 35px var(--corona),
+                    0 0 50px var(--outer),
+                    0 0 80px var(--outer),
+                    0 0 100px var(--core);
+              }
+          }
+      5:["$","style",null,{"children":"$11"}]
+6:["$","script","script-0",{"src":"/my-portfolio/_next/static/chunks/06b4be67a065a24d.js","async":true}]
+7:["$","script","script-1",{"src":"/my-portfolio/_next/static/chunks/03990c2760f619b0.js","async":true}]
+8:["$","script","script-2",{"src":"/my-portfolio/_next/static/chunks/492e63f4571e2cb1.js","async":true}]
+9:["$","script","script-3",{"src":"/my-portfolio/_next/static/chunks/1f6b0e9deb96c487.js","async":true}]
+a:["$","script","script-4",{"src":"/my-portfolio/_next/static/chunks/d6c1f3a2473dc156.js","async":true}]
+b:["$","script","script-5",{"src":"/my-portfolio/_next/static/chunks/f7faf6018461a56a.js","async":true}]
+c:["$","script","script-6",{"src":"/my-portfolio/_next/static/chunks/ab1393ed70c46fa4.js","async":true}]
+d:["$","script","script-7",{"src":"/my-portfolio/_next/static/chunks/a12cfb8782dbc43e.js","async":true}]
+e:["$","script","script-8",{"src":"/my-portfolio/_next/static/chunks/4adf74863df99805.js","async":true}]
+f:["$","script","script-9",{"src":"/my-portfolio/_next/static/chunks/28929634515ec828.js","async":true}]
+10:["$","$L12",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@14"}]}]
+14:null
