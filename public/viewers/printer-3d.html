@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Design Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet"> 
+    <style>
+        :root {
+            --glass: rgba(255, 255, 255, 0.1);
+            --accent: #007AFF;
+        }
+        body { margin: 0; background: #050505; color: white; font-family: 'Inter', sans-serif; overflow: hidden; }
+        
+        /* UI Styling */
+        #header {
+            position: absolute; top: 30px; left: 30px; z-index: 10;
+        }
+        h1 { font-weight: 300; font-size: 1.2rem; letter-spacing: 3px; margin: 0; opacity: 0.7; }
+
+        #controls-menu {
+            position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+            display: flex; gap: 15px; z-index: 10;
+        }
+
+        .btn {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            display: flex; align-items: center; gap: 8px;
+            pointer-events: auto;
+        }
+
+        .btn:hover { background: rgba(255,255,255,0.2); border-color: white; }
+        .btn.active { background: var(--accent); border-color: var(--accent); }
+
+        #loader {
+            position: fixed; inset: 0; background: #000; 
+            display: flex; justify-content: center; align-items: center; z-index: 100;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loader"><p>OPTIMIZING 3D ENGINE...</p></div>
+
+    <div id="header">
+        <h1>Design Practicum</h1>
+        <h2>Carbon Reinforcement 3D Printer</h2>
+    </div>
+
+    <div id="controls-menu">
+        <button class="btn" onclick="resetView()">🏠 RESET VIEW</button>
+        <button id="rotateBtn" class="btn" onclick="toggleRotate()">🔄 TURNTABLE</button>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+<script type="module">
+    import * as THREE from 'three';
+    import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+    import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+    let scene, camera, renderer, controls, model;
+
+    init();
+    animate();
+
+    function init() {
+        scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x333333); 
+   
+        // Renderer Setup
+        renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.2; 
+        renderer.shadowMap.enabled = true;
+        document.body.appendChild(renderer.domElement);
+
+        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+
+        // --- CALIBRATED LIGHTS ---
+        const ambient = new THREE.AmbientLight(0xffdddd, 0.2); 
+        scene.add(ambient);
+
+        const light1 = new THREE.DirectionalLight(0x636363, 0.1); 
+        light1.position.set(5, 10, 7.5);
+        light1.castShadow = true;
+        scene.add(light1);
+
+        const light2 = new THREE.DirectionalLight(0x2E373F, 0.1);
+        light2.position.set(-5, 5, 5);
+        scene.add(light2);
+
+        const backLight = new THREE.DirectionalLight(0x443232, 0.1);
+        backLight.position.set(0, 5, -10); 
+        scene.add(backLight);
+
+        // --- ENVIRONMENT ---
+        const envInstance = new RoomEnvironment();
+        const pmremGen = new THREE.PMREMGenerator(renderer);
+        scene.environment = pmremGen.fromScene(envInstance).texture;
+
+  
+
+        // --- THE TABLE ---
+        const tableGroup = new THREE.Group();
+        const tableTopGeo = new THREE.BoxGeometry(6, 0.1, 4); 
+        const woodMat = new THREE.MeshStandardMaterial({ color: 0x4a3728, roughness: 0.4 });
+        const tableTop = new THREE.Mesh(tableTopGeo, woodMat);
+        tableTop.position.y = -1.05; 
+        tableTop.receiveShadow = true;
+        tableTop.castShadow = true;
+        tableGroup.add(tableTop);
+
+        const legGeo = new THREE.CylinderGeometry(0.06, 0.04, 1.45); 
+        const legMat = new THREE.MeshStandardMaterial({ color: 0x111111, metalness: 0.8 });
+        const legPos = [{x:2.7, z:1.7}, {x:-2.7, z:1.7}, {x:2.7, z:-1.7}, {x:-2.7, z:-1.7}];
+        
+        legPos.forEach(pos => {
+            const leg = new THREE.Mesh(legGeo, legMat);
+            leg.position.set(pos.x, -1.775, pos.z); 
+            tableGroup.add(leg);
+        });
+        scene.add(tableGroup);
+
+        // --- CONTROLS ---
+        controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+
+        // --- LOAD MODEL ---
+        const loader = new GLTFLoader();
+        loader.load('Dp.glb', function (gltf) {
+            model = gltf.scene;
+            model.rotation.y = Math.PI;
+
+            // Proper Scaling
+            const box = new THREE.Box3().setFromObject(model);
+            const size = box.getSize(new THREE.Vector3());
+            const maxDim = Math.max(size.x, size.y, size.z);
+            const scale = 4 / maxDim; 
+            model.scale.setScalar(scale);
+
+            // Positioning Logic
+            const scaledBox = new THREE.Box3().setFromObject(model);
+            const center = scaledBox.getCenter(new THREE.Vector3());
+            const tableTopY = -1.0; 
+
+            model.position.x = -center.x;
+            model.position.z = -center.z;
+            model.position.y = tableTopY - scaledBox.min.y; 
+
+            model.traverse(n => {
+                if (n.isMesh) {
+                    n.castShadow = true; 
+                    n.receiveShadow = true;
+                }
+            });
+
+            scene.add(model);
+            document.getElementById('loader').style.display = 'none';
+            resetView();
+        });
+
+        window.addEventListener('resize', onWindowResize);
+    }
+
+    window.resetView = function() {
+        camera.position.set(6, 4, 6); 
+        controls.target.set(0, -0.5, 0);
+        controls.update();
+    };
+
+    window.toggleRotate = function() {
+        controls.autoRotate = !controls.autoRotate;
+        document.getElementById('rotateBtn').classList.toggle('active');
+    };
+
+    function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+    }
+</script>
+
+
+</body>
+</html>
